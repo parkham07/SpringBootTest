@@ -1,0 +1,19 @@
+###
+POST http://localhost:8080/authenticate
+Content-Type: application/json; charset=UTF-8
+
+{
+  "userName": "park",
+  "password": "test"
+}
+
+> {%
+client.global.set("authorizationKey", response.body.token);
+
+client.log("생성된 key : " + client.global.get("authorizationKey"));
+%}
+
+###
+POST http://localhost:8080/authenticateTest
+Content-Type: application/json; charset=UTF-8
+Authorization: {{authorizationKey}}
