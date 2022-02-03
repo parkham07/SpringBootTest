@@ -48,7 +48,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 		portMapper.setPortMappings(Collections.singletonMap("80","443"));
 
 		http.authorizeRequests()
-				.antMatchers("/", LOGIN_URL, "/logout", "/users/**", "/authenticate").permitAll()
+				.antMatchers("/", LOGIN_URL, "/logout", "/users/**", "/authenticate", "/docs/**").permitAll()
 				.antMatchers("/foundation/**").hasAnyRole("ADMIN", "VIEW")
 				.antMatchers("/**").hasAnyRole("ADMIN", "VIEW")
 				.anyRequest().authenticated()

@@ -1,0 +1,58 @@
+= 테스트 API Documentation
+:toc:
+:toc-title: 목차
+:doctype: book
+:icons: font
+:source-highlighter: highlightjs
+:toc: left
+:toclevels: 4
+:sectlinks:
+:snippets: ./build/generated-snippets
+:operation-curl-request-title: Example request
+:operation-http-response-title: Example response
+
+[[overview]]
+= 개요
+
+== 소개
+
+테스트 API 문서.
+
+=== 토큰 생성
+
+토큰 생성
+
+|===
+| URL | Http Method
+
+| /authenticate
+| POST
+|===
+
+==== Request
+
+Header:
+include::{snippets}/authenticate/request-headers.adoc[]
+
+Parameters:
+include::{snippets}/authenticate/request-fields.adoc[]
+
+Data example:
+include::{snippets}/authenticate/request-body.adoc[]
+
+HTTP Example:
+include::{snippets}/authenticate/http-request.adoc[]
+
+CURL:
+include::{snippets}/authenticate/curl-request.adoc[]
+
+==== Response
+
+Parameters:
+include::{snippets}/authenticate/response-fields.adoc[]
+
+Data example:
+include::{snippets}/authenticate/response-body.adoc[]
+
+HTTP Example:
+include::{snippets}/authenticate/http-response.adoc[]
