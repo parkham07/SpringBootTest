@@ -1,0 +1,35 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <title>
+        <th:block layout:fragment="f-title">Dashboard</th:block>
+    </title>
+    <th:block th:replace="layout/fragments/head :: f-header"></th:block>
+</head>
+<body class="app">
+<div id="loader">
+    <div class="spinner"></div>
+</div>
+<script>window.addEventListener("load", (function () {
+    const t = document.getElementById("loader");
+    setTimeout((function () {
+        t.classList.add("fadeOut")
+    }), 300)
+}))</script>
+<div>
+    <!-- ### $Sidebar ### -->
+    <th:block th:replace="layout/fragments/sidebar :: f-sidebar"></th:block>
+    <!-- #Main ============================ -->
+    <div class="page-container">
+        <!-- ### $Topbar ### -->
+        <th:block th:replace="layout/fragments/topbar :: f-topbar"></th:block>
+        <!-- ### $App Screen Content ### -->
+        <section layout:fragment="f-content"></section>
+        <th:block th:replace="layout/fragments/footer :: f-footer"></th:block>
+        <th:block th:replace="layout/fragments/script :: f-script"></th:block>
+    </div>
+</div>
+</body>
+</html>
